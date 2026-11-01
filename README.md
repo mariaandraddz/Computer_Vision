@@ -1,6 +1,10 @@
 # Detecão de Bordas
 Uma borda em uma imagem é uma quebra de continuidade
 
+
+<a href="[https://exemplo.com](https://youtu.be/4v8Pyn45Els?si=NXD2zDSdvL7B0iYo)">Vídeo referência</a>
+
+
 ## O que é borda?
 É o contorno entre um objeto e o fundo indicando o limite entre objetos sobrepostos. As bordas são regiões da imagem onde ocorre uma mudança de intensidade em um certo intervalo do espaço, em uma certa direção
 
@@ -38,6 +42,7 @@ A direção do gradiente da borda, perpendicular à direção da borda , é enco
 - Gx - acha gradientes horizontais.
 
 <img src="images/sobel.png" alt="Operador de Roberts">
+
 Matriz transposta (A-)
 
 - A fórmula para encontrar o gradiente e o ângulo são muito similares ao operador de Roberts.
@@ -46,4 +51,20 @@ Matriz transposta (A-)
 - O ângulo do gradiente corresponde direção de máxima variação da intensidade;
 - Devido as máscaras serem 3x3 ao invés de 2x2, Sobel é muito menos sensível ao ruído do que Roberts e os resultados são mais precisos.
 
- 
+### Operador de Canny
+Definiu um conjunto de requisitos que um detector de bordas deveria atender:
+1. **Taxa de erro:** o detector de bordas deve detectar e achar somente bordas, nenhuma borda deve faltar;
+2. **Localização:** a distância entre os pixels de borda encontradas pelo detector de bordas e a borda real deve ser a menor possível;
+3. **Resposta:** o detector de bordas não deve identificar múltiplos pixels de borda onde somente existir um punico pixel.
+
+<img src="images/canny.png" alt="Operador de Canny">
+
+
+O detector de bordas de Canny é um filtro de convolução f que uniformiza o ruído e localiza as bordas. O problema é identificar um filtro que otimize os três critérios do detector de bordas:
+- Se consideramos uma borda de uma dimensão variando no contraste e então convolucionando a borda com a função de uniformização de Gauss, o resultado será uma variação contpinua do valor incial ao final, com uma inclinação máxima no ponto onde existe um "degrau".
+- Se esta continuidade é diferenciada em relação a x, esta inclinação máxima será o máximo da nova função em relação a original.
+
+Os máximos da convolução da máscara e da imagem indicarão bordas na imagem. Este processo pode ser realizado através do uso de uma função de Gauss de 2-Dimensões na direção de x e y. Os valores e o tamanho das máscaras de Gauss dependem da escolha do sigma (variância) na equação:
+
+<img src="images/sigma_canny.png" alt="sigma">
+
