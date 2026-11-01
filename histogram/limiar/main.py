@@ -7,7 +7,6 @@ M, N = img.shape
 Np = M * N
 
 def limiarizar(imagem, T):
-    """B = 0 se I <= T, 255 se I > T"""
     return np.where(imagem > T, 255, 0).astype(np.uint8)
 
 T = 191

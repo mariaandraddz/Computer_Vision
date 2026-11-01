@@ -12,9 +12,9 @@ rk = np.arange(256)
 
 
 h_suave = np.convolve(h, np.ones(9) / 9, mode="same")
-T_sugerido = 130 + int(np.argmin(h_suave[130:200]))
-print("T sugerido pelo vale:", T_sugerido)
-T = T_sugerido
+T_2 = 130 + int(np.argmin(h_suave[130:200]))
+print("T :", T_2)
+T = T_2
 
 plt.figure(figsize=(8, 4))
 plt.bar(rk, h, width=1.0, color="gray")
