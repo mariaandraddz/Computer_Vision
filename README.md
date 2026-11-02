@@ -68,3 +68,8 @@ Os máximos da convolução da máscara e da imagem indicarão bordas na imagem.
 
 <img src="images/sigma_canny.png" alt="sigma">
 
+---
+
+# Operações Diadicas
+
+<a href="[https://exemplo.com](https://youtu.be/4v8Pyn45Els?si=NXD2zDSdvL7B0iYo)](https://youtu.be/4UIdPigzw_8?si=vpQylT-sOibPygN2)">Vídeo referência</a>
