@@ -16,7 +16,7 @@ Dado que as imagens são em duas dimensões, é importante considerar mudanças 
 
 
 ### Um detector de borda gera:
-- Uma imagem de ggradientes expreso em tons de cinza;
+- Uma imagem de gradientes expreso em tons de cinza;
 - Uma imagem de bordas (onde os pixel com gradientes irrelevantes foram eliminados);
 - Uma matriz de vetores de orientação do gradiente (onde na posição de cada pixel está um valor indicando na posição de cada pixel está um valor indicando a direção principal do gradiente  naquele ponto)
 
