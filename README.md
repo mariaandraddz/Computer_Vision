@@ -70,6 +70,120 @@ Os máximos da convolução da máscara e da imagem indicarão bordas na imagem.
 
 ---
 
-# Operações Diadicas
-
+# Domínios em Visão
 <a href="https://www.youtube.com/watch?v=4UIdPigzw_8&list=PLmDIGfkfgKy1SBjXA0kBk4DAhIaN1vQOS&index=3">Vídeo referência</a>
+
+## Domínio do Valor
+Consideramos apenas o valor de cada pixel da imagem, sem levar em consideração o que se encontra ao seu redor.
+
+## Domínio do Espaço
+Consideramos o valor de cada pixel e também a relação deste com os valores de um conjunto de pixels na sua vizinhança.
+
+## Domínio da Frequência
+Consideramos o comportamento de variação do valor dos pixels de uma imagem em vários sentidos.
+
+---
+
+## Operações Matemáticas de imagem com operação escalar
+
+### 1. Soma
+Soma-se um escalar a cada pixel da imagem, aumentando sua intensidade.
+
+### 2. Divisão inteira
+Multiplica-se um escalar por cada pixel da imagem. Resultado é expresso em valor inteiro.
+
+Obs.: Resultados de ambos os métodos são truncados para o **valor máximo** de representação de pixel no tipo de imagem.
+
+### 3. Subtração
+Subtrai-se um escalar de cada pixel da imagem, reduzindo-se sua intensidade.
+
+### 4. Divisão Inteira
+Divide-se o valor de cada pixel da imagem por um escalar. Expressa-se o resultado como inteiro.
+
+Obs.: Resultados são expressos truncados ao **valor mínimo** de representação no tipo de imagem.
+
+
+## Operações Lógicas com operando escalar
+### 1. OR
+Realiza-se OU logico entre cada pixel da imagem e operando binário escalar.
+
+### 2. AND
+Realiza-se E lógico entre cada pixel da imagem e operando binário escalar.
+
+### 3. XOR
+Realiza-se OU exclusivo lógico entre cada pixel da imagem e operando binário escalar.
+
+### 4. NOT
+Realiza-se a negação lógica de cada pixel da imagem.
+
+Resultados são expressos sempre de forma binária (em nosso caso 0 ou 255).
+
+
+## Operações Matemáticas de imagem com imagem
+
+### 1. Soma
+Soma-se cada pixel de uma imagem ao corespondente da outra.
+
+### 2. Multiplicação
+Multiplica-se cada pixel de uma imagem com o corespondente da outra. Resultado é expresso em valor inteiro.
+
+
+### 3. Subtração
+Subtrae-se de cada pixel de uma imagem do corespondente da outra. Resultado é expresso em vaor positivo.
+
+### 4. Divisão 
+Divide-se cada pixel de uma imagem pelo corespondente da outra. Resultado é exxpresso em valor inteiro
+
+## Operações Lógicas de imagem com imagem
+
+### 1. OR
+Realiza-se OU lógico entre cada pixel corespondente das imagens.
+
+### 2. AND
+Realiza-se E lógico entre cada pixxel corepondente das imagens.
+
+### 3. XOR
+Realiza-se OU exclusivo lógico entre cada pixel corespondente das imagens.
+
+## Operações de Limiarização
+
+### 1. Limiar acima
+Compara-se cada pixel de uma imagem com um valor limiar. Ixes cujo valor for >= ao limiar recebem a cor #1, o resto a cor #2.
+
+### 2. Limiar abaixo
+Compara-se cada pixel de uma imagem com um valor limiar. Pixels cujo valor for <= ao limiar recebem a cor #1, o resto a cor #@.
+
+Para indicar que as cores são branco e preto, podemos expressar #1 = 255 e #2 = 0.
+
+### 3. Limiar dentro
+Compara-se cada pixel de uma imagem com dois valores limiar. Pixels cujo valor for >= ao limiar inferior e <= ao superior recebme a cor #1, o resto a cor #2.
+
+### 4. Limiar fora
+Compara-se cada pixel de uma imagem dois vaores limiar. PIxels cujo vaor for <= ao limiar inferior e >= ao superior recebem a cor #1, o resto a cor #2.
+
+### 5. Limiar acima com histerese
+Compara-se cada pixel de uma imagem com dois valores limiares. Pixels cujo valor for >= ao limiar superior recebem a cor #1, pixels que foram <= ao inferior a cor #2. Pixels entre os limiares são comparados aos seus vizinhos imediatos ( vizinhança de 4 ou vizinhança de 8), se algum vizinho estiver acima do limiar, este pixel receberá a cor #1, senão #2.
+
+- Vizinhança de 4:
+- 
+<img src="images/vizinhanca_4.png" alt="imagem de vizinhança de 4">
+
+- Vizinhança de 8:
+
+<img src="images/vizinhanca_8.png" alt="imagem de vizinhança de 8">
+
+
+## Operações Estatísticas
+
+### 1. Histograma
+Para cada possível valor de pixel na escala de valores utilizada (0 a 255 no nosso caso) conta-se o número de pixels apresentando esse valor. Gera-se um vetor contendo esses valores (256 posições no nosso caso) e também uma imagem representando essa contagem como um gráfico de barras.
+
+### 2. Histograma por Faixas
+Calcula-se o histograma dividindo-se a faixa de valores em pedaços dados por seus limites.
+
+### 3. Pontos Nodais de Histograma
+Calcula-se o histograma e procura-se por n fundos-de-vale no mesmo. Gera-se um vetor contendp esses valores.
+
+<img src="images/imagem_8bits.png" alt="imagem de 8 bits">
+
+
