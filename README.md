@@ -2,7 +2,7 @@
 Uma borda em uma imagem é uma quebra de continuidade
 
 
-<a href="[https://exemplo.com](https://youtu.be/4v8Pyn45Els?si=NXD2zDSdvL7B0iYo)">Vídeo referência</a>
+<a href="https://www.youtube.com/watch?v=4v8Pyn45Els&list=PLmDIGfkfgKy1SBjXA0kBk4DAhIaN1vQOS&index=6">Vídeo referência</a>
 
 
 ## O que é borda?
@@ -72,4 +72,4 @@ Os máximos da convolução da máscara e da imagem indicarão bordas na imagem.
 
 # Operações Diadicas
 
-<a href="[[https://exemplo.com](https://youtu.be/4v8Pyn45Els?si=NXD2zDSdvL7B0iYo)](https://youtu.be/4UIdPigzw_8?si=vpQylT-sOibPygN2)](https://www.youtube.com/watch?v=4UIdPigzw_8&list=PLmDIGfkfgKy1SBjXA0kBk4DAhIaN1vQOS&index=3)">Vídeo referência</a>
+<a href="https://www.youtube.com/watch?v=4UIdPigzw_8&list=PLmDIGfkfgKy1SBjXA0kBk4DAhIaN1vQOS&index=3">Vídeo referência</a>
